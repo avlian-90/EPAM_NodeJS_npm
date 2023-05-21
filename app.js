@@ -7,11 +7,11 @@ function createRandomUser() {
       email: faker.internet.email(),
       phone: faker.phone.number()
     };
-  }
+}
   
-  const fakeUsers = faker.helpers.multiple(createRandomUser, {
-    count: 10,
-  });
+const fakeUsers = faker.helpers.multiple(createRandomUser, {
+    count: 10
+});
 
 const sortedUsers = _.sortBy(fakeUsers, user => user.name);
 
