@@ -1,21 +1,17 @@
-import faker from "faker";
+import { faker } from "@faker-js/faker";
 import _ from "lodash";
 
-// const fakeUsers = [];
-
-// for (let i = 0; i < 10; i++) {
-//     fakeUsers.push({
-//         name: faker.name.findName(),
-//         email: faker.internet.email(),
-//         phone: faker.phone.phoneNumber()
-//     })
-// }
-
-const fakeUsers = Array.from({ length: 10 }, () => ({
-    name: faker.name.findName(),
-    email: faker.internet.email(),
-    phone: faker.phone.phoneNumber(),
-}));
+function createRandomUser() {
+    return {
+      name: faker.internet.userName(),
+      email: faker.internet.email(),
+      phone: faker.phone.number()
+    };
+  }
+  
+  const fakeUsers = faker.helpers.multiple(createRandomUser, {
+    count: 10,
+  });
 
 const sortedUsers = _.sortBy(fakeUsers, user => user.name);
 
