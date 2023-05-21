@@ -1,4 +1,5 @@
-import faker from 'faker';
+import faker from "faker";
+import _ from "lodash";
 
 // const fakeUsers = [];
 
@@ -16,4 +17,7 @@ const fakeUsers = Array.from({ length: 10 }, () => ({
     phone: faker.phone.phoneNumber(),
 }));
 
-console.log(fakeUsers);
+const sortedUsers = _.sortBy(fakeUsers, user => user.name);
+
+console.log("Users:", fakeUsers);
+console.log("Sorted Users:", sortedUsers);
