@@ -9,10 +9,8 @@
   "author": "Liana Avagyan",
   "license": "ISC",
   "type": "module",
-  "devDependencies": {
-    "faker": "^6.6.6"
-  },
   "dependencies": {
+    "faker": "^5.5.3",
     "lodash": "^4.17.21"
   }
 }
